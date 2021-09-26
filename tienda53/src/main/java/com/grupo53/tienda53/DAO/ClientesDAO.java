@@ -61,7 +61,7 @@ public class ClientesDAO {
 	 * @param documento
 	 * @return
 	 */
-	public ArrayList<ClienteVO> consultarCliente(String cliente) {	
+	public ArrayList<ClienteVO> consultarCliente(int cedula_cliente) {	
 		//lista que contendra el o los usuarios obtenidos
 		ArrayList<ClienteVO> listaclientes = new ArrayList<ClienteVO>();		
 		//instancia de la conexión
@@ -69,9 +69,9 @@ public class ClientesDAO {
 		try {
 			//prepare la sentencia en la base de datos
 			PreparedStatement consulta = conex.getConnection()
-					.prepareStatement("SELECT * FROM clientes where cliente = ? ");		
+					.prepareStatement("SELECT * FROM clientes where cedula_cliente = ? ");		
 			// se cambia el comodin ? por el dato que ha llegado en el parametro de la funcion
-			consulta.setString(1, cliente);			
+			consulta.setInt(1, cedula_cliente);			
 			//ejecute la sentencia
 			ResultSet res = consulta.executeQuery();			
 			//cree un objeto basado en la clase entidad con los datos encontrados
@@ -169,7 +169,7 @@ public class ClientesDAO {
 			Statement consulta = conex.getConnection().createStatement();
 			
 			//preparando sentencia a realizar
-			String sentencia = "delete from usuarios where cedula_cliente=" + cedula_cliente + ";";
+			String sentencia = "delete from clientes where cedula_cliente=" + cedula_cliente + ";";
 			
 			//impresion de verificación
 			System.out.println("Eliminado " + sentencia);
