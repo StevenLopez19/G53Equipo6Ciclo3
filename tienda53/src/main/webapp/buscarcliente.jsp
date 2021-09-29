@@ -77,7 +77,7 @@
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon4">Cliente a buscar</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte nombre aqui..."
+						placeholder="Inserte cedula aqui..."
 						aria-describedby="basic-addon4" required id="usersearch" >
 				</div>
 				<br>
