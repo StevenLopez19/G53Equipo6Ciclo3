@@ -451,7 +451,6 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 7em 0 0 0 !important;
   margin-bottom: 0 !important;
   width: 100%;
-  float: left;
 }
 #gtco-footer a:hover {
   color: #fff !important;
@@ -1341,9 +1340,8 @@ blockquote p > cite {
   font-weight: 300;
 }
 .form-control:active, .form-control:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: #52D681;
+  
+  border-color: #ffbb8d;
 }
 
 .row-pb-md {
