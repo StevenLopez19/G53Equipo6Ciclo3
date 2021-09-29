@@ -29,14 +29,8 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Bootstrap  -->
+
 	<link rel="stylesheet" href="css/bootstrap.css">
-	
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
@@ -96,7 +90,8 @@
 				
 			</div>
 		</nav>
-		
+		<!-- Navbar END -->
+	
 	<!-- contenido  -->
 	<div class="gtco-nav" role="navigation">
 	<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
