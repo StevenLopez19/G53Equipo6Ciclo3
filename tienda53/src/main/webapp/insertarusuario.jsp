@@ -94,9 +94,7 @@
 		</div>
 	</div>
 
-		<div class="container ">
-		
-		
+		<div class="container ">		
 			<div id="error" class="alert alert-danger visually-hidden"
 					role="alert">Error al crear el usuario, verifique que no exista un usuario con la cedula y usuario dados</div>
 					
@@ -128,7 +126,7 @@
     <input type="password" class="form-control" id="password" placeholder="Password" required>
   </div>
  
-  <button type="submit" class="btn btn-outline-success btn-lg btn-block" onclick="enviar()"><i class="fas fa-check"></i> Insertar nuevo usuario</button>
+  <button type="submit" class="btn btn-default btn-lg btn-block" onclick="enviar()"><i class="fas fa-check"></i> Insertar nuevo usuario</button>
 </form>
 
 <!-- form end -->
