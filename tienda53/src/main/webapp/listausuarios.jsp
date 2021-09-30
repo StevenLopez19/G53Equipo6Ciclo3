@@ -27,12 +27,8 @@
 
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
-
-<!-- Animate.css -->
-
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
 
 
 <script>
@@ -70,79 +66,94 @@
 <body>
 	<!-- Navbar-->
 	<nav class="gtco-nav" role="navigation">
-			<div class="gtco-container">
-				<div class="row">
-					<div class="col-xs-12 text-right menu-1">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-12 text-right menu-1">
 					<div class="col-xs-12">
-						<a class="navbar-brand links" href="index.html" ><img src="images/logotipoizquierda.png"  class="logo" /></a>
+						<a class="navbar-brand links" href="index.html"><img
+							src="images/logotipoizquierda.png" class="logo" /></a>
 					</div>
-						<ul>
-							<i class="fas fa-users"></i><li class="active"><a href="listausuarios.jsp">Usuarios</a></li>
-							<i class="fas fa-address-book"></i><li><a href="listaclientes.jsp">Clientes</a></li>
-							<i class="fas fa-truck"></i><li><a href="listausuarios.jsp">Proveedores</a></li>
-							<i class="fas fa-apple-alt"></i><li><a href="listausuarios.jsp">Productos</a></li>
-							<i class="fas fa-money-check-alt"></i><li><a href="listausuarios.jsp">Ventas</a></li>
-							<i class="fas fa-clipboard-list"></i><li><a href="about.html">Reportes</a></li>
-							
-						</ul>
-					</div>
+					<ul>
+						<i class="fas fa-users"></i>
+						<li class="active"><a href="listausuarios.jsp">Usuarios</a></li>
+						<i class="fas fa-address-book"></i>
+						<li><a href="listaclientes.jsp">Clientes</a></li>
+						<i class="fas fa-truck"></i>
+						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<i class="fas fa-apple-alt"></i>
+						<li><a href="listausuarios.jsp">Productos</a></li>
+						<i class="fas fa-money-check-alt"></i>
+						<li><a href="listausuarios.jsp">Ventas</a></li>
+						<i class="fas fa-clipboard-list"></i>
+						<li><a href="about.html">Reportes</a></li>
+
+					</ul>
 				</div>
-				
 			</div>
-		</nav>
-		<!-- Navbar END -->
-	
+
+		</div>
+	</nav>
+	<!-- Navbar END -->
+
 	<!-- contenido  -->
 	<div class="gtco-nav" role="navigation">
-	<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-		<h2>Operaciones</h2>
-		
+		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+			<h2>Operaciones</h2>
+
 			<div class="gtco-container">
 				<div class="row">
 					<div class=" text-center menu-1">
 						<ul>
-							<li class="test-a"><a href="insertarusuario.jsp"><i class="fas fa-plus-circle"></i> Agregar usuario</a></li>
-							<li><a href="eliminarusuario.jsp"><i class="fas fa-trash"></i>Eliminar usuario</a></li>
-							<li><a href="actualizarusuario.jsp"><i class="fas fa-pen-alt"></i>Actualizar usuario</a></li>
-							<li><a href="buscarusuario.jsp"><i class="fas fa-search"></i>Buscar usuario</a></li>
-							<li><a href="listausuarios.jsp"><i class="fas fa-search"></i>Listar todos los usuarios</a></li>
+							<li class="test-a"><a href="insertarusuario.jsp"><i
+									class="fas fa-plus-circle"></i> Agregar usuario</a></li>
+							<li><a href="eliminarusuario.jsp"><i
+									class="fas fa-trash"></i>Eliminar usuario</a></li>
+							<li><a href="actualizarusuario.jsp"><i
+									class="fas fa-pen-alt"></i>Actualizar usuario</a></li>
+							<li><a href="buscarusuario.jsp"><i class="fas fa-search"></i>Buscar
+									usuario</a></li>
+							<li><a href="listausuarios.jsp"><i class="fas fa-search"></i>Listar
+									todos los usuarios</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<!-- footer  -->
-	
+
 	<div class="gtco-nav col-md-8 col-md-offset-2 gtco-heading text-center">
 		<h2>Tabla de usuarios</h2>
-			<div class="container ">
-				<div class="row">
-					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center table-hover" id="usuariosinfo">
-					</div>
+		<div class="container ">
+			<div class="row">
+				<!--  Aqui es donde se autogenera la tabla basado en el script -->
+				<div class="col align-self-center table-hover" id="usuariosinfo">
 				</div>
 			</div>
+		</div>
 	</div>
-	
 
 
-<footer>
-	<div class="container gtco-footer gtco-copyright bg-dark  fixed-bottom">
-				<div class="gtco-container">
-					<div class="row">
-						<div class="col-md-6 text-left">
-							<p><small>&copy; 2021. All Rights Reserved. </small></p>
-						</div>
-						<div class="col-md-6 text-right">
-							<p><small>Programado por el maravilloso grupo 6.</small> </p>
-						</div>
+
+	<footer>
+		<div
+			class="container gtco-footer gtco-copyright bg-dark  fixed-bottom">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-6 text-left">
+						<p>
+							<small>&copy; 2021. MinTic 2022. </small>
+						</p>
+					</div>
+					<div class="col-md-6 text-right">
+						<p>
+							<small>Programado por el maravilloso grupo 6.</small>
+						</p>
 					</div>
 				</div>
 			</div>
+		</div>
 
-</footer>
+	</footer>
 
 
 </body>
