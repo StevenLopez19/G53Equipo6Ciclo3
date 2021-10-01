@@ -24,10 +24,10 @@ public class ProveedorDAO{
 			//String que contiene la sentencia insert a ejecutar
 			String sentencia = "INSERT INTO proveedores VALUES(" 
 					+ proveedor.getNit_proveedor() + "," + "'"
-					+ proveedor.getNombre_proveedor() + "'," + "'" 
+					+ proveedor.getCiudad_proveedor() + "'," + "'" 
 					+ proveedor.getDireccion_proveedor() + "'," + "'" 
-					+ proveedor.getTelefono_proveedor()+ "'," + "'" 
-					+ proveedor.getCiudad_proveedor() + "'" 
+					+ proveedor.getNombre_proveedor()+ "'," + "'" 
+					+ proveedor.getTelefono_proveedor() + "'" 
 					+ ");";
 			
 			//se ejecuta la sentencia en la base de datos
@@ -77,10 +77,10 @@ public class ProveedorDAO{
 			if (res.next()) {
 				ProveedorVO Proveedor = new ProveedorVO();
 				Proveedor.setNit_proveedor(Integer.parseInt(res.getString("nit_proveedor")));
-				Proveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
-				Proveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
-				Proveedor.setTelefono_proveedor(res.getString("telefono_proveedor"));
 				Proveedor.setCiudad_proveedor(res.getString("ciudad_proveedor"));
+				Proveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
+				Proveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
+				Proveedor.setTelefono_proveedor(res.getString("ciudad_proveedor"));
 
 				listaproveedores.add(Proveedor);
 			}
@@ -128,10 +128,10 @@ public class ProveedorDAO{
 			while (res.next()) {
 				ProveedorVO Proveedor = new ProveedorVO();
 				Proveedor.setNit_proveedor(Integer.parseInt(res.getString("cedula_proveedor")));
-				Proveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
-				Proveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
-				Proveedor.setTelefono_proveedor(res.getString("telefono_proveedor"));
 				Proveedor.setCiudad_proveedor(res.getString("ciudad_proveedor"));
+				Proveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
+				Proveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
+				Proveedor.setTelefono_proveedor(res.getString("telefono_proveedor"));
 
 				listaproveedores.add(Proveedor);
 			}
@@ -207,10 +207,10 @@ public class ProveedorDAO{
 			
 			//String con la sentencia a ejecutar
 			String sentencia = "UPDATE proveedores "
-					+ "SET nombre_proveedor = '"+proveedor.getNombre_proveedor()+"',"
+					+ "SET ciudad_proveedor = '"+proveedor.getCiudad_proveedor()+"',"
 					+ "direccion_proveedor = '"+proveedor.getDireccion_proveedor()+"',"
-					+ "telefono_proveedor = '"+proveedor.getTelefono_proveedor()+"',"
-					+ "ciudad_proveedor= '"+proveedor.getCiudad_proveedor()+"' "
+					+ "nombre_proveedor = '"+proveedor.getNombre_proveedor()+"',"
+					+ "telefono_proveedor= '"+proveedor.getTelefono_proveedor()+"' "
 					+ "WHERE nit_proveedor = "+proveedor.getNit_proveedor()+";";
 			
 			//ejecuta la sentencia 

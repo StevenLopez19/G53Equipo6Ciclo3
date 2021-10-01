@@ -19,3 +19,25 @@ select*from usuarios;
 
 create unique index usuario_unico on usuarios(usuario);
 
+create table clientes (
+cedula_cliente bigint primary key,
+nombre_cliente varchar(255) not null,
+telefono_cliente varchar(255) not null,
+direccion_cliente varchar(255) not null,
+correo_cliente varchar(255) not null
+);
+
+select*from clientes;
+
+
+create table proveedores (
+nit_proveedor bigint primary key,
+nombre_proveedor varchar(255) not null,
+direccion_proveedor varchar(255) not null,
+telefono_proveedor varchar(255) not null,
+ciudad_proveedor varchar(255) not null
+);
+
+
+
+
