@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Buscar cliente</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -64,7 +64,6 @@
 
 		</div>
 	</nav>
-
 	<!-- contenido  -->
 	<div class="gtco-nav" role="navigation">
 		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
@@ -136,8 +135,8 @@
 					placeholder="telefono" disabled="disabled">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="exampleInputEmail1">Dirección</label> <input type="text"
-					class="form-control" id="direccion_cliente" placeholder="Dirección"
+				<label for="exampleInputEmail1">DirecciÃ³n</label> <input type="text"
+					class="form-control" id="direccion_cliente" placeholder="DirecciÃ³n"
 					disabled="disabled">
 			</div>
 		</form>
