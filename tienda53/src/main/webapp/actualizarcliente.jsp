@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
 <title>Actualizar cliente</title>
+<link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -26,7 +27,8 @@
 
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -34,127 +36,136 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html">TiendaScrum6</a>
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-12 text-right menu-1">
+					<div class="col-xs-12">
+						<a class="navbar-brand links" href="index.html"><img
+							src="images/logotipoizquierda.png" class="logo" /></a>
+					</div>
+					<ul>
+						<i class="fas fa-users"></i>
+						<li ><a href="listausuarios.jsp">Usuarios</a></li>
+						<i class="fas fa-address-book"></i>
+						<li class="active"><a href="listaclientes.jsp">Clientes</a></li>
+						<i class="fas fa-truck"></i>
+						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<i class="fas fa-apple-alt"></i>
+						<li><a href="listausuarios.jsp">Productos</a></li>
+						<i class="fas fa-money-check-alt"></i>
+						<li><a href="listausuarios.jsp">Ventas</a></li>
+						<i class="fas fa-clipboard-list"></i>
+						<li><a href="about.html">Reportes</a></li>
+
+					</ul>
+				</div>
+			</div>
+
 		</div>
 	</nav>
 
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
+		<!-- contenido  -->
+		<div class="gtco-nav" role="navigation">
+		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+			<h2>Operaciones</h2>
+
+			<div class="gtco-container">
+				<div class="row">
+					<div class=" text-center menu-1">
+						<ul>
+							<li class="test-a"><a href="insertarcliente.jsp"><i
+									class="fas fa-plus-circle"></i> Agregar cliente</a></li>
+							<li><a href="eliminarcliente.jsp"><i
+									class="fas fa-trash"></i>Eliminar cliente</a></li>
+							<li><a href="actualizarcliente.jsp"><i
+									class="fas fa-pen-alt"></i>Actualizar cliente</a></li>
+							<li><a href="buscarcliente.jsp"><i class="fas fa-search"></i>Buscar
+									un cliente</a></li>
+							<li><a href="listaclientes.jsp"><i class="fas fa-search"></i>Listar
+									todos los clientes</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-	</nav>
+	</div>
 
-	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-sync"></i> Datos a actualizar del cliente
-		</h1>
+
+		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+			<h2>
+				<i class="fas fa-sync"></i> Datos a actualizar del cliente
+			</h2>
+		</div>
+
 		<div class="container">
-
-
-			<div id="error" class="alert alert-danger visually-hidden"
+			<div id="error" class="alert alert-danger visually-hidden col-md-4"
 				role="alert">Error al actualizar el cliente</div>
 
-			<div id="correcto" class="alert alert-success visually-hidden"
+			<div id="correcto" class="alert alert-success visually-hidden col-md-4"
 				role="alert">Cliente actualizado con exito</div>
 
-			<form id="form1">
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Cedula</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte cedula aqui..."
-						aria-describedby="basic-addon1" required id="cedula_cliente">
+			<!-- form -->
+			<form>
+				<div class="form-group col-md-6">
+					<label for="exampleInputEmail1">Cedula</label> <input type="number"
+						class="form-control" id="cedula_cliente" placeholder="cedula"
+						required>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="exampleInputPassword1">Email</label> <input
+						type="email" class="form-control" id="correo_cliente"
+						placeholder="Email" required>
+				</div>
+				<div class="form-group col-md-12">
+					<label for="exampleInputEmail1">Nombre completo</label> <input
+						type="text" class="form-control" id="nombre_cliente"
+						placeholder="Nombre completo" required>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="exampleInputPassword1">Telefono cliente</label> <input
+						type="number" class="form-control" id="telefono_cliente"
+						placeholder="telefono" required>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="exampleInputEmail1">Dirección</label> <input
+						type="text" class="form-control" id="direccion_cliente"
+						placeholder="Dirección" required>
 				</div>
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon2">Nombre</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte nombre aqui..."
-						aria-describedby="basic-addon2" required id="nombre_cliente">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Dirección</span>
-					<input type="text" class="form-control"
-						placeholder="Inserte dirección aqui..."
-						aria-describedby="basic-addon3" required id="direccion_cliente">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon4">Teléfono</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte telefono aqui..."
-						aria-describedby="basic-addon4" required id="telefono_cliente">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon5">Email</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte email aqui..."
-						aria-describedby="basic-addon5" required id="correo_cliente">
-				</div>
+				<button type="submit" class="btn btn-default btn-lg btn-block"
+					onclick="actualizar()">
+					<i class="fas fa-check"></i> Actualizar cliente
+				</button>
 			</form>
+			<!-- form end -->
+		</div>
 
-			<button type="button" class="btn btn-warning" onclick="actualizar()">
-				<i class="fas fa-edit"></i> Actualizar cliente
-			</button>
-
-			<h1>
-				<i class="fas fa-cogs"></i> Operaciones
-			</h1>
-			<div class="container">
+	<!-- footer -->
+	<footer>
+		<div
+			class="gtco-footer container gtco-copyright bg-dark  fixed-bottom">
+			<div class="gtco-container">
 				<div class="row">
-					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarcliente.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar cliente
-					</button>
-					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarcliente.jsp'">
-						<i class="fas fa-trash"></i> Eliminar cliente
-					</button>
-					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarcliente.jsp'">
-						<i class="fas fa-pen-alt"></i> Actualizar cliente
-					</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarcliente.jsp'">
-						<i class="fas fa-search"></i> Buscar un cliente
-					</button>
-					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listaclientes.jsp'">
-						<i class="fas fa-search"></i> Listar todos los clientes
-					</button>
+					<div class="col-md-6 text-left">
+						<p>
+							<small>&copy; 2021. MinTic 2022. </small>
+						</p>
+					</div>
+					<div class="col-md-6 text-right">
+						<p>
+							<small>Programado por el maravilloso grupo 6.</small>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
 
-	</div>
-	<nav class="navbar fixed-bottom navbar-dark bg-dark">
-		<div class="row justify-content-between">
-			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por SCRUM6 <i
-					class="fas fa-code-branch"></i></a>
-			</div>
-		</div>
-	</nav>
+	</footer>
+	<!-- footer END-->
 	<script>
 		function actualizar() {
-			
+
 			var x = document.getElementById("cedula_cliente").value;
 			var y = document.getElementById("nombre_cliente").value;
 			var req = new XMLHttpRequest();
@@ -180,9 +191,7 @@
 					coincidencia = true
 					break;
 				}
-			
 
-				
 			}
 			console.log(coincidencia);
 
@@ -194,10 +203,10 @@
 						.getElementById("nombre_cliente").value);
 				formData.append("direccion_cliente", document
 						.getElementById("direccion_cliente").value);
-				formData.append("telefono_cliente",
-						document.getElementById("telefono_cliente").value);
-				formData.append("correo_cliente",
-						document.getElementById("correo_cliente").value);
+				formData.append("telefono_cliente", document
+						.getElementById("telefono_cliente").value);
+				formData.append("correo_cliente", document
+						.getElementById("correo_cliente").value);
 				var xhr = new XMLHttpRequest();
 				xhr.open("PUT", "http://localhost:8080/actualizarclientes");
 
@@ -224,8 +233,8 @@
 				document.getElementById("telefono_cliente").value = "";
 				document.getElementById("correo_cliente").value = "";
 			}
-			
-			}
+
+		}
 	</script>
 
 </body>
