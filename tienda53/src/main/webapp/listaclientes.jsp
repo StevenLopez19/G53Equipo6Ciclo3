@@ -75,11 +75,7 @@
 			<i class="fas fa-users"></i> Usuarios</a> 
 			<a class="navbar-brand links" href="listaclientes.jsp" >
 			<i class="fas fa-address-book"></i> Clientes</a>
-<<<<<<< Updated upstream
-			<a class="navbar-brand links" href="listausuarios.jsp">
-=======
 			<a class="navbar-brand links" href="listaproveedor.jsp">
->>>>>>> Stashed changes
 			<i class="fas fa-truck"></i> Proveedores</a>
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-apple-alt"></i> Productos</a>
