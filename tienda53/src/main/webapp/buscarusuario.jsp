@@ -106,7 +106,7 @@
 			role="alert">Usuario encontrado con exito</div>
 		<div class="form-group col-md-12">
 			<label for="exampleInputEmail1">Usuario a buscar</label> <input
-				type="number" class="form-control" id="usersearch"
+				type="text" class="form-control" id="usersearch"
 				placeholder="Usuario a buscar" required>
 		</div>
 		<button type="submit" class="btn btn-default btn-lg btn-block "
