@@ -36,8 +36,7 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i
-				class="fas fa-fish"></i>TiendaScrum6</a>
+			<a class="navbar-brand links" href="index.html">TiendaScrum6</a>
 		</div>
 	</nav>
 
@@ -50,7 +49,7 @@
 				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listaproveedor.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
@@ -76,9 +75,9 @@
 			<form id="form1">
 			
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">nit</span> <input
+					<span class="input-group-text" id="basic-addon1">Nit</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte NIT aqui..."
+						placeholder="Inserte Nit aqui..."
 						aria-describedby="basic-addon1" required id="nit_proveedor">
 				</div>
 
@@ -137,7 +136,7 @@
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
-			var clientes = null;
+			var proveedores = null;
 			if (req.status == 200)
 				proveedores = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
@@ -154,7 +153,7 @@
 			console.log(coincidencia);
 
 			if (coincidencia != false) {
-				var proveedor=document.getElementById("nit_proveedor").value;
+				var nit=document.getElementById("nit_proveedor").value;
 				
 				var xhr = new XMLHttpRequest();
 				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit_proveedor="+nit);

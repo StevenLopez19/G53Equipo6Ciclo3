@@ -49,9 +49,9 @@
 				class="fas fa-users"></i> Usuarios
 			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproveedor.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
@@ -79,7 +79,7 @@
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon4">Proveedor a buscar</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte username aqui..."
+						placeholder="Inserte nit aqui..."
 						aria-describedby="basic-addon4" required id="usersearch" >
 				</div>
 				<br>
