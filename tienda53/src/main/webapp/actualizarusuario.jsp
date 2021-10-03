@@ -95,15 +95,16 @@
 		<h2>
 			<i class="fas fa-sync"></i> Datos a actualizar del usuario
 		</h2>
-	</div>
-
-
-	<div class="container">
 		<div id="error" class="alert alert-danger visually-hidden col-md-4"
 			role="alert">Error al actualizar el usuario, verifique que la
 			cedula y usuario dados sean validos</div>
-		<div id="correcto" class="alert alert-success visually-hidden col-md-4"
-			role="alert">Usuario actualizado con exito</div>
+		<div id="correcto"
+			class="alert alert-success visually-hidden col-md-4" role="alert">Usuario
+			actualizado con exito</div>
+	</div>
+
+	<div class="container">
+	
 
 		<!-- form -->
 		<form>
@@ -135,7 +136,7 @@
 
 			<button type="submit" class="btn btn-default btn-lg btn-block"
 				onclick="actualizar()">
-				<i class="fas fa-check"></i> Insertar nuevo usuario
+				<i class="fas fa-check"></i> Actualizar nuevo usuario
 			</button>
 		</form>
 		<!-- form end -->
