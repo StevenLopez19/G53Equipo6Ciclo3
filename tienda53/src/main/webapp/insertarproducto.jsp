@@ -94,63 +94,70 @@
 
 		
 		
-<script>
-function subirArchivo(){
-	
-	try{
-		
-		var csvFile=document.getElementById("archivo");
-		
-		var input= csvFile.files[0];
-		var reader= new FileReader();
-		
-		reader.onload= function (e){
-			
-			var text= e.target.result;
-			
-			var arrayLineas= text.split("\n");
-			
-			var xhr=new XMLHttpRequest();
-			xhr.open("DELETE","http://localhost:8080/eliminartodoproducto",true);
-			xhr.send();
-			
-			for (var i = 0; i < arrayLineas.lenght; i+=1){
-				var arrayDatos=arrayLineas[i].split(",");
-				
-				if (arrayLineas[i]==""){
-					continue;
-				}
-				
-				for (var j=0; j<arrayDatos.lenght; j+=1){
-					console.log(i+" "+j+"->"+arrayDatos[j]);
+	<script>
+		function subirArchivo() {
+
+			try {
+
+				var csvFile = document.getElementById("archivo");
+
+				var input = csvFile.files[0];
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+
+					var text = e.target.result;
+
+					var arrayLineas = text.split("\n");
+
+					var xhr = new XMLHttpRequest();
+					xhr.open("DELETE",
+							"http://localhost:8080/eliminartodoproducto", true);
+					xhr.send();
+
+					for (var i = 0; i < arrayLineas.length; i += 1) {
+						var arraydatos = arrayLineas[i].split(",");
+
+						if (arrayLineas[i] == "") {
+							continue;
+						}
+
+						for (var j = 0; j < arraydatos.length; j += 1) {
+							console.log(i + " " + j + "->" + arraydatos[j]);
+						}
+
+						var formData = new FormData();
+						formData.append("codigo_producto", arraydatos[0]);
+						formData.append("nombre_producto", arraydatos[1]);
+						formData.append("nit_proveedor", arraydatos[2]);
+						formData.append("precio_compra", arraydatos[3]);
+						formData.append("iva_compra", arraydatos[4]);
+						formData.append("precio_venta", arraydatos[5]);
+						var xhr = new XMLHttpRequest();
+						xhr.open("POST",
+								"http://localhost:8080/registrarproducto");
+
+						xhr.send(formData);
 					}
-				
-				var formData=new formData();
-				formData.append("codigo_producto",arrayDatos[0]);
-				formData.append("nombre_producto",arrayDatos[1]);
-				formData.append("nit_proveedor",arrayDatos[2]);
-				formData.append("precio_compra",arrayDatos[3]);
-				formData.append("iva_compra",arrayDatos[4]);
-				formData.append("precio_venta",arrayDatos[5]);
-				var xhr= new XMLHttpRequest();
-				xhr.open("POST",
-						"http:/localhost:8080/registrarproducto");
-				xhr.send(formData);
+
+					var element = document.getElementById("error");
+					element.classList.add("visually-hidden");
+					var element2 = document.getElementById("correcto");
+					element2.classList.remove("visually-hidden");
+
+					document.getElementById("archivo").value = "";
+
+				};
+
+				reader.readAsText(input);
+			} catch (error) {
+				var element = document.getElementById("error");
+				element.classList.remove("visually-hidden");
+				var element2 = document.getElementById("correcto");
+				element2.classList.add("visually-hidden");
+
+				document.getElementById("archivo").value = "";
 			}
-			
-			var element = document.getElementById("error");
-			element.classList.add("visually-hidden");
-			var element2=document.getElementById("correcto");
-			element2.classList.remove("visually-hidden");
 		}
-	}
-	
-
-
-
-catch {}
-}
-</script>		
-		
-</body>
+	</script>
 </html>
