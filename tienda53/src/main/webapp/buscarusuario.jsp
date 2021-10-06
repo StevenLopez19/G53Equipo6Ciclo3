@@ -97,7 +97,7 @@
 		<h2>
 			<i class="fas fa-plus-circle"></i> Buscando un usuario
 		</h2>
-	</div>
+	</div> 
 
 	<div class="container">
 		<div id="error" class="alert alert-danger visually-hidden col-md-4"

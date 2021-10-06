@@ -141,8 +141,9 @@
 			<!-- form end -->
 		</div>
 
+
 	<!-- footer -->
-	<footer>
+	<footer class="mu-5">
 		<div
 			class="gtco-footer container gtco-copyright bg-dark  fixed-bottom">
 			<div class="gtco-container">
