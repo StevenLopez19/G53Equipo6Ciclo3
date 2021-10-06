@@ -2,19 +2,21 @@ package com.grupo53.tienda53.DAO;
 
 import java.sql.*;
 
+
+
 /**
  * Clase que permite conectar con la base de datos
  */
 public class Conexion {
 	
 	/** Parametros de conexion */
-	static String nombre_base_datos = "BLOCKSTORE";
+	static String nombre_base_datos = "g53e6";
 	//root
-	static String usuariobd = "root";
+	static String usuariobd = "admin";
 	//mintic
-	static String clavebd = "mintic";
+	static String clavebd = "minticroca";
 	//127.0.0.1 == localhost
-	static String url = "jdbc:mysql://127.0.0.1/" + nombre_base_datos;
+	static String url = "jdbc:mariadb://tiendasgenericasdr-g9-g38-53.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/" + nombre_base_datos;
 	
 	//objeto sin inicializar de la conexión
 	Connection connection = null;
@@ -22,7 +24,7 @@ public class Conexion {
 	public Conexion() {
 		try {
 			// obtenemos el driver de para mysql
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("org.mariadb.jdbc.Driver");
 			// obtenemos la conexión
 			connection = DriverManager.getConnection(url, usuariobd, clavebd);
 			//si hay conexión correcta mostrar información en consola

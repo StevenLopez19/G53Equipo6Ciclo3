@@ -80,7 +80,7 @@ public class ProveedorDAO{
 				Proveedor.setCiudad_proveedor(res.getString("ciudad_proveedor"));
 				Proveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
 				Proveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
-				Proveedor.setTelefono_proveedor(res.getString("ciudad_proveedor"));
+				Proveedor.setTelefono_proveedor(res.getString("telefono_proveedor"));
 
 				listaproveedores.add(Proveedor);
 			}
@@ -127,7 +127,7 @@ public class ProveedorDAO{
 			//cree un objeto para cada encontrado en la base de datos basado en la clase entidad con los datos encontrados
 			while (res.next()) {
 				ProveedorVO Proveedor = new ProveedorVO();
-				Proveedor.setNit_proveedor(Integer.parseInt(res.getString("cedula_proveedor")));
+				Proveedor.setNit_proveedor(Integer.parseInt(res.getString("nit_proveedor")));
 				Proveedor.setCiudad_proveedor(res.getString("ciudad_proveedor"));
 				Proveedor.setDireccion_proveedor(res.getString("direccion_proveedor"));
 				Proveedor.setNombre_proveedor(res.getString("nombre_proveedor"));
