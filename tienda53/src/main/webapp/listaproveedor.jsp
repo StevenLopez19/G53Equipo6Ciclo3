@@ -29,10 +29,14 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarproveedores";
+
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
+	
 	function loadproveedores() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.open("GET", baseUrl+"/listarproveedores", true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var proveedores = JSON.parse(xmlhttp.responseText);
@@ -106,19 +110,19 @@
 			<div class="container">
 				<div class="row">
 					<button type="button" class="btn btn-success" 
-					onclick="window.location.href='/insertarproveedor.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
 					<i class="fas fa-plus-circle"></i> Agregar proveedor</button>
 					<button type="button" class="btn btn-danger"
-					onclick="window.location.href='/eliminarproveedor.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
 					<i class="fas fa-trash"></i> Eliminar proveedor</button>
 					<button type="button" class="btn btn-warning"
-					onclick="window.location.href='/actualizarproveedor.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
 					<i class="fas fa-pen-alt"></i> Actualizar proveedor</button>
 					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='/buscarproveedor.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
 					<i class="fas fa-search"></i> Buscar un proveedor</button>
 					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='/listaproveedor.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/listaproveedor.jsp'">
 					<i class="fas fa-search"></i> Listar todos los proveedores</button>
 				</div>
 			</div>
