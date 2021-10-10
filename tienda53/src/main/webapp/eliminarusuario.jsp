@@ -98,23 +98,23 @@
 			<div class="container">
 				<div class="row">
 					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
 						<i class="fas fa-plus-circle"></i> Agregar usuario
 					</button>
 					<button type="button" class="btn btn-danger"
-						onclick="window.location.href='/eliminarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
 						<i class="fas fa-trash"></i> Eliminar usuario
 					</button>
 					<button type="button" class="btn btn-warning"
-						onclick="window.location.href='/actualizarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 						<i class="fas fa-pen-alt"></i> Actualizar usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/buscarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarusuario.jsp'">
 						<i class="fas fa-search"></i> Buscar un usuario
 					</button>
 					<button type="button" class="btn btn-primary"
-						onclick="window.location.href='/listausuarios.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
 						<i class="fas fa-search"></i> Listar todos los usuarios
 					</button>
 				</div>
@@ -133,10 +133,14 @@
 	</nav>
 	<script>
 		function eliminar() {
+			
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarusuarios', false);
+			req.open('GET', baseUrl+'/listarusuarios', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -158,7 +162,7 @@
 				var cedula=document.getElementById("cedula_usuario").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarusuario?cedula_usuario="+cedula);
+				xhr.open("DELETE", baseUrl+"/eliminarusuario?cedula_usuario="+cedula);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

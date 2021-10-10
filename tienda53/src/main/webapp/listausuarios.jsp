@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+x<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -29,10 +29,14 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarusuarios";
+
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
+	
 	function loadusuarios() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.open("GET", baseUrl+"/listarusuarios", true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var usuarios = JSON.parse(xmlhttp.responseText);
@@ -106,19 +110,19 @@
 			<div class="container">
 				<div class="row">
 					<button type="button" class="btn btn-success" 
-					onclick="window.location.href='/insertarusuario.jsp'">
+					onclick="window.location.href='<%=request.getContextPath()%>/insertarusuario.jsp'">
 					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
 					<button type="button" class="btn btn-danger" 
-					onclick="window.location.href='/eliminarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarusuario.jsp'">
 					<i class="fas fa-trash"></i> Eliminar usuario</button>
 					<button type="button" class="btn btn-warning" 
-					onclick="window.location.href='/actualizarusuario.jsp'">
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
 					<button type="button" class="btn btn-primary"
-					 onclick="window.location.href='/buscarusuario.jsp'">
+					 	onclick="window.location.href='<%=request.getContextPath()%>/actualizarusuario.jsp'">
 					<i class="fas fa-search"></i> Buscar un usuario</button>
 					<button type="button" class="btn btn-primary"
-					 onclick="window.location.href='/listausuarios.jsp'">
+					 	onclick="window.location.href='<%=request.getContextPath()%>/listausuarios.jsp'">
 					<i class="fas fa-search"></i> Listar todos los usuarios</button>
 				</div>
 			</div>
