@@ -36,51 +36,8 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-xs-12 text-right menu-1">
-					<div class="col-xs-12">
-						<a class="navbar-brand links" href="index.html"><img
-							src="images/logotipoizquierda.png" class="logo" /></a>
-					</div>
-					<ul>
-						<i class="fas fa-users"></i>
-						<li><a href="listausuarios.jsp">Usuarios</a></li>
-						<i class="fas fa-address-book"></i>
-						<li class="active"><a href="listaclientes.jsp">Clientes</a></li>
-						<i class="fas fa-truck"></i>
-						<li><a href="listausuarios.jsp">Proveedores</a></li>
-						<i class="fas fa-apple-alt"></i>
-						<li><a href="listausuarios.jsp">Productos</a></li>
-						<i class="fas fa-money-check-alt"></i>
-						<li><a href="listausuarios.jsp">Ventas</a></li>
-						<i class="fas fa-clipboard-list"></i>
-						<li><a href="about.html">Reportes</a></li>
 
-					</ul>
-				</div>
-			</div>
 
-<<<<<<< HEAD
-=======
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
->>>>>>> main
 		</div>
 	</nav>
 	<!-- contenido  -->
