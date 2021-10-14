@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Actualizar cliente</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -61,14 +61,12 @@
 					</ul>
 				</div>
 			</div>
-
 		</div>
 	</nav>
 		<!-- contenido  -->
 		<div class="gtco-nav" role="navigation">
 		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
 			<h2>Operaciones</h2>
-
 			<div class="gtco-container">
 				<div class="row">
 					<div class=" text-center menu-1">
@@ -89,8 +87,6 @@
 			</div>
 		</div>
 	</div>
-
-
 		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
 			<h2>
 				<i class="fas fa-sync"></i> Datos a actualizar del cliente
@@ -103,7 +99,6 @@
 
 			<div id="correcto" class="alert alert-success visually-hidden col-md-4"
 				role="alert">Cliente actualizado con exito</div>
-
 			<!-- form -->
 			<form>
 				<div class="form-group col-md-6">
@@ -127,9 +122,9 @@
 						placeholder="telefono" required>
 				</div>
 				<div class="form-group col-md-6">
-					<label for="exampleInputEmail1">Dirección</label> <input
+					<label for="exampleInputEmail1">DirecciÃ³n</label> <input
 						type="text" class="form-control" id="direccion_cliente"
-						placeholder="Dirección" required>
+						placeholder="DirecciÃ³n" required>
 				</div>
 
 				<button type="submit" class="btn btn-default btn-lg btn-block"
@@ -139,7 +134,6 @@
 			</form>
 			<!-- form end -->
 		</div>
-
 
 	<!-- footer -->
 	<footer class="mu-5">
@@ -157,6 +151,26 @@
 							<small>Programado por el maravilloso grupo 6.</small>
 						</p>
 					</div>
+					<button type="button" class="btn btn-success"
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarcliente.jsp'">
+						<i class="fas fa-plus-circle"></i> Agregar cliente
+					</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarcliente.jsp'">
+						<i class="fas fa-trash"></i> Eliminar cliente
+					</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarcliente.jsp'">
+						<i class="fas fa-pen-alt"></i> Actualizar cliente
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarcliente.jsp'">
+						<i class="fas fa-search"></i> Buscar un cliente
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/listaclientes.jsp'">
+						<i class="fas fa-search"></i> Listar todos los clientes
+					</button>
 				</div>
 			</div>
 		</div>
@@ -165,18 +179,19 @@
 	<!-- footer END-->
 	<script>
 		function actualizar() {
-
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+      
 			var x = document.getElementById("cedula_cliente").value;
 			var y = document.getElementById("nombre_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
+			req.open('GET', baseUrl+'/listarclientes', false);
 			req.send(null);
 			var clientes = null;
 			if (req.status == 200)
 				clientes = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
-
 			for (i = 0; i < clientes.length; i++) {
 				console.log(clientes[i].cedula_cliente);
 				console.log(clientes[i].nombre_cliente);
@@ -185,13 +200,11 @@
 					coincidencia = true
 					break;
 				}
-
 				if (clientes[i].nombre_cliente === y) {
 					console.log(clientes[i].nombre_cliente + " " + y);
 					coincidencia = true
 					break;
 				}
-
 			}
 			console.log(coincidencia);
 
@@ -208,7 +221,7 @@
 				formData.append("correo_cliente", document
 						.getElementById("correo_cliente").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarclientes");
+				xhr.open("PUT", baseUrl+"/actualizarclientes");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

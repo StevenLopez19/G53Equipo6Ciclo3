@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Actualizar proveedor</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -120,9 +120,9 @@
 					placeholder="Inserte ciudad aqui..." required>
 			</div>
 			<div class="form-group col-md-12">
-				<label for="exampleInputEmail1">Dirección</label> <input type="text"
+				<label for="exampleInputEmail1">DirecciÃ³n</label> <input type="text"
 					class="form-control" id="direccion_proveedor"
-					placeholder="Inserte dirección aqui..." required>
+					placeholder="Inserte direcciÃ³n aqui..." required>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="exampleInputPassword1">Nombre</label> <input type="text"
@@ -130,9 +130,9 @@
 					placeholder="Inserte nombre aqui..." required>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="exampleInputEmail1">Teléfono</label> <input type="text"
+				<label for="exampleInputEmail1">TelÃ©fono</label> <input type="text"
 					class="form-control" id="telefono_proveedor"
-					placeholder="Inserte teléfono aqui..." required>
+					placeholder="Inserte telÃ©fono aqui..." required>
 			</div>
 
 			<button type="submit" class="btn btn-default btn-lg btn-block"
@@ -159,6 +159,26 @@
 							<small>Programado por el maravilloso grupo 6.</small>
 						</p>
 					</div>
+					<button type="button" class="btn btn-success"
+						onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
+						<i class="fas fa-plus-circle"></i> Agregar proveedor
+					</button>
+					<button type="button" class="btn btn-danger"
+						onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
+						<i class="fas fa-trash"></i> Eliminar proveedor
+					</button>
+					<button type="button" class="btn btn-warning"
+						onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
+						<i class="fas fa-pen-alt"></i> Actualizar proveedor
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
+						<i class="fas fa-search"></i> Buscar un proveedor
+					</button>
+					<button type="button" class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/listaproveedor.jsp'">
+						<i class="fas fa-search"></i> Listar todos los proveedores
+					</button>
 				</div>
 			</div>
 		</div>
@@ -167,12 +187,13 @@
 	<!-- footer END-->
 	<script>
 		function actualizar() {
-
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 			var x = document.getElementById("nit_proveedor").value;
 			var y = document.getElementById("ciudad_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarproveedores', false);
+			req.open('GET', baseUrl+'/listarproveedores', false);
 			req.send(null);
 			var proveedores = null;
 			if (req.status == 200)
@@ -210,7 +231,7 @@
 				formData.append("telefono_proveedor", document
 						.getElementById("telefono_proveedor").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarproveedor");
+				xhr.open("PUT", baseUrl+"/actualizarproveedor");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
