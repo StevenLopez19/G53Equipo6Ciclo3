@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Buscar cliente</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -101,6 +101,7 @@
 			role="alert">Error al buscar el cliente, no existe</div>
 		<div id="correcto" class="alert alert-success visually-hidden"
 			role="alert">Cliente encontrado con exito</div>
+
 		<div class="form-group col-md-12">
 			<label for="exampleInputEmail1">Cliente a buscar</label> <input
 				type="number" class="form-control" id="usersearch"
@@ -134,8 +135,8 @@
 					placeholder="telefono" disabled="disabled">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="exampleInputEmail1">Dirección</label> <input type="text"
-					class="form-control" id="direccion_cliente" placeholder="Dirección"
+				<label for="exampleInputEmail1">Direcci�n</label> <input type="text"
+					class="form-control" id="direccion_cliente" placeholder="Direcci�n"
 					disabled="disabled">
 			</div>
 		</form>
@@ -166,18 +167,19 @@
 	<br>
 	<script>
 		function enviar() {
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];	
-			
-				var req = new XMLHttpRequest();
-				var coincidencia = false;
-				var clien=   document.getElementById("usersearch").value;
-				req.open('GET', baseUrl+'/consultarcliente?cedula_cliente='+clien, false);
-				req.send(null);
-				var clientes = null;
-				if (req.status == 200)
-					clientes = JSON.parse(req.responseText);
-				console.log(JSON.parse(req.responseText));
+
+			var req = new XMLHttpRequest();
+			var coincidencia = false;
+			var clien = document.getElementById("usersearch").value;
+			req.open('GET',
+					'http://localhost:8080/consultarcliente?cedula_cliente='
+							+ clien, false);
+			req.send(null);
+			var clientes = null;
+			if (req.status == 200)
+				clientes = JSON.parse(req.responseText);
+			console.log(JSON.parse(req.responseText));
+
 			var element = document.getElementById("error");
 			element.classList.add("visually-hidden");
 			var element2 = document.getElementById("correcto");

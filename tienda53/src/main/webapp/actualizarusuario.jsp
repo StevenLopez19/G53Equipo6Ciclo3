@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Actualizar usuario</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -161,15 +161,11 @@
 	</footer>
 	<script>
 		function actualizar() {
-			
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-			
 			var x = document.getElementById("user").value;
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarusuarios', false);
+			req.open('GET', 'http://localhost:8080/listarusuarios', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -206,7 +202,7 @@
 				formData.append("usuario",
 						document.getElementById("user").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", baseUrl+"/actualizarusuarios");
+				xhr.open("PUT", "http://localhost:8080/actualizarusuarios");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

@@ -1,4 +1,4 @@
-x<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -7,9 +7,9 @@ x<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Lista de usuarios</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -32,14 +32,10 @@ x<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 
 
 <script>
-
-var getUrl = window.location;
-var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-
-	
+	var baseurl = "http://localhost:8080/listarusuarios";
 	function loadusuarios() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseUrl+"/listarusuarios", true);
+		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var usuarios = JSON.parse(xmlhttp.responseText);

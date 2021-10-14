@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Insertando cliente</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -128,8 +128,8 @@
 					placeholder="telefono" required>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="exampleInputEmail1">DirecciÃ³n</label> <input type="text"
-					class="form-control" id="direccion_cliente" placeholder="DirecciÃ³n"
+				<label for="exampleInputEmail1">Dirección</label> <input type="text"
+					class="form-control" id="direccion_cliente" placeholder="Dirección"
 					required>
 			</div>
 
@@ -165,12 +165,10 @@
 	<script>
 		function enviar() {
 
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarclientes', false);
+			req.open('GET', 'http://localhost:8080/listarclientes', false);
 			req.send(null);
 			var clientes = null;
 			if (req.status == 200)
@@ -191,13 +189,18 @@
 
 			if (coincidencia == false) {
 				var formData = new FormData();
-	 			formData.append("cedula_cliente", document.getElementById("cedula_cliente").value);
-	 			formData.append("nombre_cliente", document.getElementById("nombre_cliente").value);
-	 			formData.append("direccion_cliente", document.getElementById("direccion_cliente").value);
-	 			formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
-	 			formData.append("correo_cliente",document.getElementById("correo_cliente").value);
-	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", baseUrl+"/registrarcliente");
+				formData.append("cedula_cliente", document
+						.getElementById("cedula_cliente").value);
+				formData.append("nombre_cliente", document
+						.getElementById("nombre_cliente").value);
+				formData.append("direccion_cliente", document
+						.getElementById("direccion_cliente").value);
+				formData.append("telefono_cliente", document
+						.getElementById("telefono_cliente").value);
+				formData.append("correo_cliente", document
+						.getElementById("correo_cliente").value);
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", "http://localhost:8080/registrarcliente");
 
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

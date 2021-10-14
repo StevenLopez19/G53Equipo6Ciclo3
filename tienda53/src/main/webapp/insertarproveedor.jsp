@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Insertando proveedor</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -120,9 +120,9 @@
 					placeholder="Inserte ciudad aqui..." required>
 			</div>
 			<div class="form-group col-md-12">
-				<label for="exampleInputEmail1">DirecciÃ³n</label> <input type="text"
+				<label for="exampleInputEmail1">Dirección</label> <input type="text"
 					class="form-control" id="direccion_proveedor"
-					placeholder="Inserte direcciÃ³n aqui..." required>
+					placeholder="Inserte dirección aqui..." required>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="exampleInputPassword1">Nombre</label> <input type="text"
@@ -130,9 +130,9 @@
 					placeholder="Inserte nombre aqui..." required>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="exampleInputEmail1">TelÃ©fono</label> <input type="text"
+				<label for="exampleInputEmail1">Teléfono</label> <input type="text"
 					class="form-control" id="telefono_proveedor"
-					placeholder="Inserte telÃ©fono aqui..." required>
+					placeholder="Inserte teléfono aqui..." required>
 			</div>
 
 			<button type="submit" class="btn btn-default btn-lg btn-block"
@@ -167,12 +167,10 @@
 	<script>
 		function enviar() {
 
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarproveedores', false);
+			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
 			var proveedores = null;
 			if (req.status == 200)
@@ -193,15 +191,19 @@
 
 			if (coincidencia == false) {
 				var formData = new FormData();
+				formData.append("nit_proveedor", document
+						.getElementById("nit_proveedor").value);
+				formData.append("ciudad_proveedor", document
+						.getElementById("ciudad_proveedor").value);
+				formData.append("direccion_proveedor", document
+						.getElementById("direccion_proveedor").value);
+				formData.append("nombre_proveedor", document
+						.getElementById("nombre_proveedor").value);
+				formData.append("telefono_proveedor", document
+						.getElementById("telefono_proveedor").value);
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", "http://localhost:8080/registrarproveedor");
 
-	 			formData.append("nit_proveedor", document.getElementById("nit_proveedor").value);
-	 			formData.append("ciudad_proveedor", document.getElementById("ciudad_proveedor").value);
-	 			formData.append("direccion_proveedor", document.getElementById("direccion_proveedor").value);
-	 			formData.append("nombre_proveedor",document.getElementById("nombre_proveedor").value);
-	 			formData.append("telefono_proveedor",document.getElementById("telefono_proveedor").value);
-	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", baseUrl+"/registrarproveedor");
-	 			
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
