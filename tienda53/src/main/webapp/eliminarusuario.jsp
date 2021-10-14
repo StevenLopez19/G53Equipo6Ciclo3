@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Eliminar usuario</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -151,14 +151,10 @@
 	</footer>
 	<script>
 		function eliminar() {
-			
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-			
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarusuarios', false);
+			req.open('GET', 'http://localhost:8080/listarusuarios', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -180,8 +176,10 @@
 				var cedula = document.getElementById("cedula_usuario").value;
 
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", baseUrl+"/eliminarusuario?cedula_usuario="+cedula);
-				
+				xhr.open("DELETE",
+						"http://localhost:8080/eliminarusuario?cedula_usuario="
+								+ cedula);
+
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 

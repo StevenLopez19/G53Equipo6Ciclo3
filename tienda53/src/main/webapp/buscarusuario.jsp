@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Buscar usuario</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -171,18 +171,16 @@
 	<script>
 		function enviar() {
 
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];	
-			
-				var req = new XMLHttpRequest();
-				var coincidencia = false;
-				var user=   document.getElementById("usersearch").value;
-				req.open('GET', baseUrl+'/consultarusuario?usuario='+user, false);
-				req.send(null);
-				var usuario = null;
-				if (req.status == 200)
-					usuario = JSON.parse(req.responseText);
-				console.log(JSON.parse(req.responseText));
+			var req = new XMLHttpRequest();
+			var coincidencia = false;
+			var user = document.getElementById("usersearch").value;
+			req.open('GET', 'http://localhost:8080/consultarusuario?usuario='
+					+ user, false);
+			req.send(null);
+			var usuario = null;
+			if (req.status == 200)
+				usuario = JSON.parse(req.responseText);
+			console.log(JSON.parse(req.responseText));
 
 			var element = document.getElementById("error");
 			element.classList.add("visually-hidden");

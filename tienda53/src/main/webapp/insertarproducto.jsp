@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Insertando productos</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -74,7 +74,7 @@
 
 	<div class="container">
 		<div id="error" class="alert alert-danger visually-hidden"
-			role="alert">Archivo vacÃ­o, extensiÃ³n no valida o datos
+			role="alert">Archivo vacío, extensión no valida o datos
 			corruptos (El separador debe ser coma ",")</div>
 
 		<div id="correcto" class="alert alert-success visually-hidden"
@@ -118,12 +118,7 @@
 
 		</footer>
 		<!-- footer END-->
-		
-	<script>
-		function subirArchivo() {
-			
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
 
 		<script>
 			function subirArchivo() {
@@ -137,10 +132,7 @@
 
 					reader.onload = function(e) {
 
-					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",baseUrl+
-							"/eliminartodoproducto", true);
-					xhr.send();
+						var text = e.target.result;
 
 						var arrayLineas = text.split("\n");
 
@@ -180,16 +172,8 @@
 						var element2 = document.getElementById("correcto");
 						element2.classList.remove("visually-hidden");
 
-						var formData = new FormData();
-						formData.append("codigo_producto", arraydatos[0]);
-						formData.append("nombre_producto", arraydatos[1]);
-						formData.append("nit_proveedor", arraydatos[2]);
-						formData.append("precio_compra", arraydatos[3]);
-						formData.append("iva_compra", arraydatos[4]);
-						formData.append("precio_venta", arraydatos[5]);
-						var xhr = new XMLHttpRequest();
-						xhr.open("POST",
-								"/registrarproducto");
+						document.getElementById("archivo").value = "";
+
 					};
 
 					reader.readAsText(input);

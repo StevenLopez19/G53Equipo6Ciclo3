@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- TamaÃ±o de la pantalla -->
+<!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaÃ±a -->
+<!-- titulo de la pestaña -->
 <title>Lista de clientes</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -31,18 +31,14 @@
 <link rel="stylesheet" href="css/style.css">
 
 <script>
-
-var getUrl = window.location;
-var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-
-	
+	var baseurl = "http://localhost:8080/listarclientes";
 	function loadclientes() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseUrl+"/listarclientes", true);
+		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var clientes = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Nombre</th><th>DirecciÃ³n</th><th>TelÃ©fono</th><th>Email</th></tr>";
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Email</th></tr>";
 				var main = "";
 				for (i = 0; i < clientes.length; i++) {
 					main += "<tr><td>" + clientes[i].cedula_cliente
