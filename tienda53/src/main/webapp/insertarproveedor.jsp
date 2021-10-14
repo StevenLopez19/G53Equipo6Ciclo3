@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
 <title>Insertando proveedor</title>
+<link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -26,6 +27,8 @@
 
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style.css">
 
 
 
@@ -34,182 +37,186 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html">TiendaScrum6</a>
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-12 text-right menu-1">
+					<div class="col-xs-12">
+						<a class="navbar-brand links" href="index.html"><img
+							src="images/logotipoizquierda.png" class="logo" /></a>
+					</div>
+					<ul>
+						<i class="fas fa-users"></i>
+						<li><a href="listausuarios.jsp">Usuarios</a></li>
+						<i class="fas fa-address-book"></i>
+						<li><a href="listaclientes.jsp">Clientes</a></li>
+						<i class="fas fa-truck"></i>
+						<li class="active"><a href="listaproveedor.jsp">Proveedores</a></li>
+						<i class="fas fa-apple-alt"></i>
+						<li><a href="insertarproducto.jsp">Productos</a></li>
+						<i class="fas fa-money-check-alt"></i>
+						<li><a href="listausuarios.jsp">Ventas</a></li>
+						<i class="fas fa-clipboard-list"></i>
+						<li><a href="about.html">Reportes</a></li>
+
+					</ul>
+				</div>
+			</div>
+
 		</div>
 	</nav>
 
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaproveedor.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
+	<!-- contenido  -->
+	<div class="gtco-nav" role="navigation">
+		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+			<h2>Operaciones</h2>
+
+			<div class="gtco-container">
+				<div class="row">
+					<div class=" text-center menu-1">
+						<ul>
+							<li class="active"><a href="insertarproveedor.jsp"><i
+									class="fas fa-plus-circle"></i> Agregar proveedores</a></li>
+							<li><a href="eliminarproveedor.jsp"><i
+									class="fas fa-trash"></i>Eliminar proveedores</a></li>
+							<li><a href="actualizarproveedor.jsp"><i
+									class="fas fa-pen-alt"></i>Actualizar proveedores</a></li>
+							<li><a href="buscarproveedor.jsp"><i
+									class="fas fa-search"></i>Buscar proveedores</a></li>
+							<br>
+							<br>
+							<li><a href="listausuarios.jsp"><i
+									class="fas fa-search"></i>Listar todos los proveedores</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-	</nav>
+	</div>
 
-	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-plus-circle"></i> Datos del nuevo proveedor
-		</h1>
-		<div class="container">
-		
-		
-			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear proveedor, verifique que no exista un proveedor con la misma cedula</div>
-					
-			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Proveedor creado con exito</div>
+	<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
+		<h2>
+			<i class="fas fa-sync"></i> Datos del nuevo proveedor
+		</h2>
+	</div>
 
-			<form id="form1">
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Nit</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte nit aqui..."
-						aria-describedby="basic-addon1" required id="nit_proveedor">
-				</div>
+	<div class="container">
+		<div id="error" class="alert alert-danger visually-hidden"
+			role="alert">Error al crear proveedor, verifique que no exista
+			un proveedor con la misma cedula</div>
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon2">Ciudad</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte ciudad aqui..."
-						aria-describedby="basic-addon2" required id="ciudad_proveedor">
-				</div>
+		<div id="correcto" class="alert alert-success visually-hidden"
+			role="alert">Proveedor creado con exito</div>
+		<!-- form -->
+		<form>
+			<div class="form-group col-md-6">
+				<label for="exampleInputEmail1">Nit</label> <input type="text"
+					class="form-control" id="nit_proveedor"
+					placeholder="Inserte nit aqui..." required>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="exampleInputPassword1">Ciudad</label> <input type="text"
+					class="form-control" id="ciudad_proveedor"
+					placeholder="Inserte ciudad aqui..." required>
+			</div>
+			<div class="form-group col-md-12">
+				<label for="exampleInputEmail1">Dirección</label> <input type="text"
+					class="form-control" id="direccion_proveedor"
+					placeholder="Inserte dirección aqui..." required>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="exampleInputPassword1">Nombre</label> <input type="text"
+					class="form-control" id="nombre_proveedor"
+					placeholder="Inserte nombre aqui..." required>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="exampleInputEmail1">Teléfono</label> <input type="text"
+					class="form-control" id="telefono_proveedor"
+					placeholder="Inserte teléfono aqui..." required>
+			</div>
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Dirección</span>
-					<input type="text" class="form-control"
-						placeholder="Inserte dirección aqui..."
-						aria-describedby="basic-addon3" required id="direccion_proveedor">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon4">Nombre</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte nombre aqui..."
-						aria-describedby="basic-addon4" required id="nombre_proveedor">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon5">Teléfono</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte teléfono aqui..."
-						aria-describedby="basic-addon5" required id="telefono_proveedor">
-				</div>
-
-
-
-
-
-			</form>
-
-			<button type="button" class="btn btn-success" onclick="enviar()">
+			<button type="submit" class="btn btn-default btn-lg btn-block"
+				onclick="enviar()">
 				<i class="fas fa-check"></i> Insertar nuevo proveedor
 			</button>
-
-
-
-
-			<h1>
-				<i class="fas fa-cogs"></i> Operaciones
-			</h1>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarproveedor.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar proveedor
-					</button>
-					<button type="button" class="btn btn-danger" 
-					onclick="window.location.href='/eliminarproveedor.jsp'">
-						<i class="fas fa-trash"></i> Eliminar proveedor
-					</button>
-					<button type="button" class="btn btn-warning" 
-					onclick="window.location.href='/actualizarproveedor.jsp'">
-						<i class="fas fa-pen-alt"></i> Actualizar proveedor
-					</button>
-					<button type="button" class="btn btn-primary" 
-						onclick="window.location.href='/buscarproveedor.jsp'">
-						<i class="fas fa-search"></i> Buscar un proveedor
-					</button>
-					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='/listaproveedor.jsp'">
-						<i class="fas fa-search"></i> Listar todos los proveedores
-					</button>
-				</div>
-
-			</div>
-		</div>
-
+		</form>
+		<!-- form end -->
 	</div>
-	<nav class="navbar fixed-bottom navbar-dark bg-dark">
-		<div class="row justify-content-between">
-			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por SCRUM6 <i
-					class="fas fa-code-branch"></i></a>
+	<!-- footer -->
+	<footer class="mu-5">
+		<div
+			class="gtco-footer container gtco-copyright bg-dark  fixed-bottom">
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-6 text-left">
+						<p>
+							<small>&copy; 2021. MinTic 2022. </small>
+						</p>
+					</div>
+					<div class="col-md-6 text-right">
+						<p>
+							<small>Programado por el maravilloso grupo 6.</small>
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</nav>
+
+	</footer>
+	<!-- footer END-->
 	<script>
 		function enviar() {
-			
+
 			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
-			var proveedores=null;
+			var proveedores = null;
 			if (req.status == 200)
-				proveedores=JSON.parse(req.responseText);
-			  	console.log(JSON.parse(req.responseText));
-			  	
+				proveedores = JSON.parse(req.responseText);
+			console.log(JSON.parse(req.responseText));
+
 			for (i = 0; i < proveedores.length; i++) {
 				console.log(proveedores[i].nit_proveedor);
 				console.log(proveedores[i].ciudad_proveedor);
-			
-				
-				if (proveedores[i].nit_proveedor ==y ) {
-					console.log(proveedores[i].nit_proveedor +" "+y);	
-					coincidencia =true
+
+				if (proveedores[i].nit_proveedor == y) {
+					console.log(proveedores[i].nit_proveedor + " " + y);
+					coincidencia = true
 					break;
 				}
 			}
-			console.log(coincidencia);	
-			
-			if (coincidencia==false){
+			console.log(coincidencia);
+
+			if (coincidencia == false) {
 				var formData = new FormData();
-	 			formData.append("nit_proveedor", document.getElementById("nit_proveedor").value);
-	 			formData.append("ciudad_proveedor", document.getElementById("ciudad_proveedor").value);
-	 			formData.append("direccion_proveedor", document.getElementById("direccion_proveedor").value);
-	 			formData.append("nombre_proveedor",document.getElementById("nombre_proveedor").value);
-	 			formData.append("telefono_proveedor",document.getElementById("telefono_proveedor").value);
-	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", "http://localhost:8080/registrarproveedor");
-	 			
+				formData.append("nit_proveedor", document
+						.getElementById("nit_proveedor").value);
+				formData.append("ciudad_proveedor", document
+						.getElementById("ciudad_proveedor").value);
+				formData.append("direccion_proveedor", document
+						.getElementById("direccion_proveedor").value);
+				formData.append("nombre_proveedor", document
+						.getElementById("nombre_proveedor").value);
+				formData.append("telefono_proveedor", document
+						.getElementById("telefono_proveedor").value);
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", "http://localhost:8080/registrarproveedor");
+
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
-				
+
 				document.getElementById("nit_proveedor").value = "";
 				document.getElementById("ciudad_proveedor").value = "";
 				document.getElementById("direccion_proveedor").value = "";
 				document.getElementById("nombre_proveedor").value = "";
 				document.getElementById("telefono_proveedor").value = "";
-	 			xhr.send(formData);
+				xhr.send(formData);
 
-			}else{
+			} else {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
@@ -219,7 +226,7 @@
 				document.getElementById("direccion_proveedor").value = "";
 				document.getElementById("nombre_proveedor").value = "";
 				document.getElementById("telefono_proveedor").value = "";
-			}	
+			}
 		}
 	</script>
 

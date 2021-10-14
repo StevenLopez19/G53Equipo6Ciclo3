@@ -79,9 +79,9 @@
 						<i class="fas fa-address-book"></i>
 						<li><a href="listaclientes.jsp">Clientes</a></li>
 						<i class="fas fa-truck"></i>
-						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<li><a href="listaproveedor.jsp">Proveedores</a></li>
 						<i class="fas fa-apple-alt"></i>
-						<li><a href="listausuarios.jsp">Productos</a></li>
+						<li><a href="insertarproducto.jsp">Productos</a></li>
 						<i class="fas fa-money-check-alt"></i>
 						<li><a href="listausuarios.jsp">Ventas</a></li>
 						<i class="fas fa-clipboard-list"></i>
@@ -111,7 +111,7 @@
 									class="fas fa-pen-alt"></i>Actualizar usuario</a></li>
 							<li><a href="buscarusuario.jsp"><i class="fas fa-search"></i>Buscar
 									usuario</a></li>
-							<li><a href="listausuarios.jsp"><i class="fas fa-search"></i>Listar
+							<li class="active"><a href="listausuarios.jsp"><i class="fas fa-search"></i>Listar
 									todos los usuarios</a></li>
 						</ul>
 					</div>

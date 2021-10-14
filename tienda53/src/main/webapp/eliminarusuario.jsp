@@ -51,9 +51,9 @@
 						<i class="fas fa-address-book"></i>
 						<li><a href="listaclientes.jsp">Clientes</a></li>
 						<i class="fas fa-truck"></i>
-						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<li><a href="listaproveedor.jsp">Proveedores</a></li>
 						<i class="fas fa-apple-alt"></i>
-						<li><a href="listausuarios.jsp">Productos</a></li>
+						<li><a href="insertarproducto.jsp">Productos</a></li>
 						<i class="fas fa-money-check-alt"></i>
 						<li><a href="listausuarios.jsp">Ventas</a></li>
 						<i class="fas fa-clipboard-list"></i>
@@ -65,8 +65,6 @@
 
 		</div>
 	</nav>
-
-<<<<<<< HEAD
 
 
 	<!-- contenido  -->
@@ -80,7 +78,7 @@
 						<ul>
 							<li class="test-a"><a href="insertarusuario.jsp"><i
 									class="fas fa-plus-circle"></i> Agregar usuario</a></li>
-							<li><a href="eliminarusuario.jsp"><i
+							<li class="active"><a href="eliminarusuario.jsp"><i
 									class="fas fa-trash"></i>Eliminar usuario</a></li>
 							<li><a href="actualizarusuario.jsp"><i
 									class="fas fa-pen-alt"></i>Actualizar usuario</a></li>
@@ -92,24 +90,7 @@
 					</div>
 				</div>
 			</div>
-=======
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
->>>>>>> main
+
 		</div>
 	</div>
 
@@ -124,8 +105,9 @@
 			role="alert">Error al eliminar el usuario, verifique que exista
 			un usuario con la cedula y usuario dados</div>
 
-		<div id="correcto" class="alert alert-success visually-hidden col-md-4"
-			role="alert">Usuario eliminado con exito</div>
+		<div id="correcto"
+			class="alert alert-success visually-hidden col-md-4" role="alert">Usuario
+			eliminado con exito</div>
 
 		<!-- form -->
 

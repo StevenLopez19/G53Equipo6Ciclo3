@@ -51,9 +51,9 @@
 						<i class="fas fa-address-book"></i>
 						<li class="active"><a href="listaclientes.jsp">Clientes</a></li>
 						<i class="fas fa-truck"></i>
-						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<li><a href="listaproveedor.jsp">Proveedores</a></li>
 						<i class="fas fa-apple-alt"></i>
-						<li><a href="listausuarios.jsp">Productos</a></li>
+						<li><a href="insertarproducto.jsp">Productos</a></li>
 						<i class="fas fa-money-check-alt"></i>
 						<li><a href="listausuarios.jsp">Ventas</a></li>
 						<i class="fas fa-clipboard-list"></i>
@@ -62,26 +62,6 @@
 					</ul>
 				</div>
 			</div>
-
-<<<<<<< HEAD
-=======
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
->>>>>>> main
 		</div>
 	</nav>
 
@@ -96,7 +76,7 @@
 						<ul>
 							<li class="test-a"><a href="insertarcliente.jsp"><i
 									class="fas fa-plus-circle"></i> Agregar cliente</a></li>
-							<li><a href="eliminarcliente.jsp"><i
+							<li class="active"><a href="eliminarcliente.jsp"><i
 									class="fas fa-trash"></i>Eliminar cliente</a></li>
 							<li><a href="actualizarcliente.jsp"><i
 									class="fas fa-pen-alt"></i>Actualizar cliente</a></li>

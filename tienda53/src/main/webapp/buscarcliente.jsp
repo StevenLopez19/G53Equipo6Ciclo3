@@ -36,10 +36,34 @@
 
 <body>
 	<!-- Navbar-->
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-xs-12 text-right menu-1">
+					<div class="col-xs-12">
+						<a class="navbar-brand links" href="index.html"><img
+							src="images/logotipoizquierda.png" class="logo" /></a>
+					</div>
+					<ul>
+						<i class="fas fa-users"></i>
+						<li><a href="listausuarios.jsp">Usuarios</a></li>
+						<i class="fas fa-address-book"></i>
+						<li class="active"><a href="listaclientes.jsp">Clientes</a></li>
+						<i class="fas fa-truck"></i>
+						<li ><a href="listaproveedor.jsp">Proveedores</a></li>
+						<i class="fas fa-apple-alt"></i>
+						<li><a href="insertarproducto.jsp">Productos</a></li>
+						<i class="fas fa-money-check-alt"></i>
+						<li><a href="listausuarios.jsp">Ventas</a></li>
+						<i class="fas fa-clipboard-list"></i>
+						<li><a href="about.html">Reportes</a></li>
 
-
+					</ul>
+				</div>
+			</div>
 		</div>
 	</nav>
+	<!-- Navbar END -->
 	<!-- contenido  -->
 	<div class="gtco-nav" role="navigation">
 		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
@@ -55,9 +79,9 @@
 									class="fas fa-trash"></i>Eliminar cliente</a></li>
 							<li><a href="actualizarcliente.jsp"><i
 									class="fas fa-pen-alt"></i>Actualizar cliente</a></li>
-							<li><a href="buscarcliente.jsp"><i class="fas fa-search"></i>Buscar
+							<li class="active"><a href="buscarcliente.jsp"><i class="fas fa-search"></i>Buscar
 									un cliente</a></li>
-							<li><a href="listaclientes.jsp"><i class="fas fa-search"></i>Listar
+							<li><a href="listaproveedor.jsp"><i class="fas fa-search"></i>Listar
 									todos los clientes</a></li>
 						</ul>
 					</div>
@@ -68,7 +92,7 @@
 
 	<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
 		<h2>
-			<i class="fas fa-sync"></i> Buscando un cliente
+			<i class="fas fa-search"></i> Buscando un cliente
 		</h2>
 	</div>
 
@@ -111,8 +135,8 @@
 					placeholder="telefono" disabled="disabled">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="exampleInputEmail1">DirecciÃ³n</label> <input type="text"
-					class="form-control" id="direccion_cliente" placeholder="DirecciÃ³n"
+				<label for="exampleInputEmail1">Dirección</label> <input type="text"
+					class="form-control" id="direccion_cliente" placeholder="Dirección"
 					disabled="disabled">
 			</div>
 		</form>

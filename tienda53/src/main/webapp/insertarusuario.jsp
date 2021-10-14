@@ -50,9 +50,9 @@
 						<i class="fas fa-address-book"></i>
 						<li><a href="listaclientes.jsp">Clientes</a></li>
 						<i class="fas fa-truck"></i>
-						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<li><a href="listaproveedor.jsp">Proveedores</a></li>
 						<i class="fas fa-apple-alt"></i>
-						<li><a href="listausuarios.jsp">Productos</a></li>
+						<li><a href="insertarproducto.jsp">Productos</a></li>
 						<i class="fas fa-money-check-alt"></i>
 						<li><a href="listausuarios.jsp">Ventas</a></li>
 						<i class="fas fa-clipboard-list"></i>
@@ -74,7 +74,7 @@
 					<div class="row">
 						<div class=" text-center menu-1">
 							<ul>
-								<li class="test-a"><a href="insertarusuario.jsp"><i
+								<li class="active"><a href="insertarusuario.jsp"><i
 										class="fas fa-plus-circle"></i> Agregar usuario</a></li>
 								<li><a href="eliminarusuario.jsp"><i
 										class="fas fa-trash"></i>Eliminar usuario</a></li>

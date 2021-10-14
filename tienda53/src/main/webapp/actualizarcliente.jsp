@@ -50,7 +50,7 @@
 						<i class="fas fa-address-book"></i>
 						<li class="active"><a href="listaclientes.jsp">Clientes</a></li>
 						<i class="fas fa-truck"></i>
-						<li><a href="listausuarios.jsp">Proveedores</a></li>
+						<li><a href="listaproveedor.jsp">Proveedores</a></li>
 						<i class="fas fa-apple-alt"></i>
 						<li><a href="listausuarios.jsp">Productos</a></li>
 						<i class="fas fa-money-check-alt"></i>
@@ -64,8 +64,6 @@
 
 		</div>
 	</nav>
-
-<<<<<<< HEAD
 		<!-- contenido  -->
 		<div class="gtco-nav" role="navigation">
 		<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
@@ -79,7 +77,7 @@
 									class="fas fa-plus-circle"></i> Agregar cliente</a></li>
 							<li><a href="eliminarcliente.jsp"><i
 									class="fas fa-trash"></i>Eliminar cliente</a></li>
-							<li><a href="actualizarcliente.jsp"><i
+							<li class="active"class="active"><a href="actualizarcliente.jsp"><i
 									class="fas fa-pen-alt"></i>Actualizar cliente</a></li>
 							<li><a href="buscarcliente.jsp"><i class="fas fa-search"></i>Buscar
 									un cliente</a></li>
