@@ -7,9 +7,9 @@
 
 <!-- paquete de caracteres -->
 <meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
+<!-- TamaÃ±o de la pantalla -->
 <meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
+<!-- titulo de la pestaÃ±a -->
 <title>Lista de proveedores</title>
 <link rel="icon" href="images/IconOnly.png" />
 <!-- bootstrap-->
@@ -32,14 +32,18 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarproveedores";
+
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
+	
 	function loadproveedores() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.open("GET", baseUrl+"/listarproveedores", true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var proveedores = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Nit</th><th>Ciudad</th><th>Dirección</th><th>Nombre</th><th>Teléfono</th></tr>";
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>Nit</th><th>Ciudad</th><th>DirecciÃ³n</th><th>Nombre</th><th>TelÃ©fono</th></tr>";
 				var main = "";
 				for (i = 0; i < proveedores.length; i++) {
 					main += "<tr><td>" + proveedores[i].nit_proveedor
