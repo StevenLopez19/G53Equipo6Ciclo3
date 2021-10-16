@@ -193,7 +193,7 @@ public class VentaDAO {
 
 			try {
 				//prepare la sentencia en la base de datos
-				PreparedStatement consulta = conex.getConnection().prepareStatement("select COUNT(*) FROM ventas");
+				PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT codigo_venta FROM ventas ORDER BY codigo_venta DESC LIMIT 1;");
 				
 				//ejecute la sentencia
 				ResultSet res = consulta.executeQuery();

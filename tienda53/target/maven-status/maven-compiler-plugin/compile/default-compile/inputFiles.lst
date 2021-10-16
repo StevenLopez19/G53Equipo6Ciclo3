@@ -1,6 +1,6 @@
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\VentaDAO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\ProductoController.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\Conexion.java
-C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\Saludar.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\UsuarioDAO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DTO\ProveedorVO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DTO\UsuarioVO.java
@@ -8,10 +8,17 @@ C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\Tienda53Application.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\ProductoDAO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\UsuarioController.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\DefaultView.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DTO\ClienteVO.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DTO\DetalleVentaVO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\ClienteController.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DTO\VentaVO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\ServletInitializer.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\DetalleVentaController.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\MyErrorController.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DTO\ProductoVO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\ClientesDAO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\ProveedorController.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\BO\VentaController.java
+C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\DetalleVentaDAO.java
 C:\Users\luisa\Documents\Programación\Ciclo 3\tienda53\src\main\java\com\grupo53\tienda53\DAO\ProveedorDAO.java

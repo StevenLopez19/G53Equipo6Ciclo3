@@ -1,105 +1,124 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description"
+	content="Proyecto de entrenamiento en desarrollo web" />
 
+<title>Insertar Usuario</title>
 
-<!-- paquete de caracteres -->
-<meta charset="utf-8">
-<!-- Tamaño de la pantalla -->
-<meta name="viewport" content="width=device-width">
-<!-- titulo de la pestaña -->
-<title>Insertando productos</title>
-<!-- bootstrap-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+	crossorigin="anonymous"></script>
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-
-<!-- font awesome -->
+	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
+	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 <link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-	crossorigin="anonymous">
-
-<!-- Cargando mi hoja de estilo -->
-<link href="style.css" rel="stylesheet" type="text/css" />
-
-
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 
+<body class="sb-nav-fixed sb-sidenav-toggled">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+		<!-- Navbar Brand-->
+		<a class="navbar-brand ps-3" href="index.html">
+		TIENDA SCRUM 6 </a>
+		<!-- Sidebar Toggle-->
+		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+			id="sidebarToggle" href="#!">
+			<i class="fas fa-bars fa-2x"></i>
+		</button>
+		<!-- Navbar Search-->
+		<form
+			class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
 
-<body>
-	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html">TiendaScrum6</a>
-		</div>
-	</nav>
-
-	<!-- Navbar modulos-->
-	<nav class="navbar navbar-dark bg-primary">
-		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp" >  <i
-				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaproveedor.jsp"> <i
-				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
-				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
-				class="fas fa-clipboard-list"></i> Reportes
-			</a>
-		</div>
-	</nav>
-	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-plus-circle"></i> Insertando archivo de productos
-		</h1>
-		<div class="container">
-		
-		
-		<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Archivo vacío, extensión no valida o datos corruptos (El separador debe ser coma ",")</div>
-					
-			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Productos importados de CSV con exito</div>
-				
-		<form id="form1">
-		<div>
-		<label for="formFileLg" class="form-label">Seleccionar
-		archivo CSV con el inventario de productos</label>
-		<input class="form-control form-control-lg" id="archivo" type="file"
-		accept=".csv">
-		<button type="button" class="btn-btn-success"
-		onclick="subirArchivo()">Subir archivo</button>
-		</div>
 		</form>
-		
-			<nav class="navbar fixed-bottom navbar-dark bg-dark">
-		<div class="row justify-content-between">
-			<div class="col-4">
-				<a class="navbar-brand links" href="#"><i class="fas fa-code"></i>
-					Diseñado y programado por SCRUM6 <i
-					class="fas fa-code-branch"></i></a>
-			</div>
-		</div>
 	</nav>
+	
+	<div w3-include-html="/snippets/sidenav.html"></div>
 
-		
-		
+		<div id="layoutSidenav_content">
+			<main>
+				<div class="container-fluid px-4 animate__animated animate__bounceInLeft">
+					<h1 class="mt-4">Insertar archivo de productos</h1>
+					<ol class="breadcrumb mb-4">
+						<li class="breadcrumb-item active">Permite cargar un archivo CSV con los productos que tiene la tienda</li>
+					</ol>
+				
+					<div class="row">
+						<div class="col-xl-12">
+							<div class="card mb-4">
+								<div class="card-header text-white bg-dark">
+									<i class="fas fa-table"></i> Carga de archivo de productos
+								</div>
+								<div class="card-body">
+									<div class="container">
+
+										<h1>
+											<i class="fas fa-plus-circle"></i> Insertando archivo de
+											productos
+										</h1>
+										<div class="container">
+
+
+											<div id="error" class="alert alert-danger visually-hidden"
+												role="alert">Archivo vacio, extensión no valida o
+												datos corruptos (El separador debe ser coma ",")</div>
+
+											<div id="correcto"
+												class="alert alert-success visually-hidden" role="alert">Productos
+												importados desde CSV con exito</div>
+
+											<form id="form1">
+												<div>
+													<label for="formFileLg" class="form-label">Seleccionar
+														archivo CSV con el inventario de productos</label> <input
+														class="form-control form-control-lg" id="archivo"
+														type="file" accept=".csv">
+													<button type="button" class="btn btn-success"
+														onclick="subirArchivo()">Subir archivo</button>
+												</div>
+
+											</form>
+
+										</div>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</main>
+
+			<div w3-include-html="/snippets/footer.html"></div>
+			
+		</div>
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+	<script src="js/scripts.js"></script>
+	
+	<script>
+		includeHTML();
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
+		crossorigin="anonymous"></script>
 	<script>
 		function subirArchivo() {
-			
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-			
+	
 
 			try {
 
@@ -115,8 +134,7 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",baseUrl+
-							"/eliminartodoproducto", true);
+					xhr.open("DELETE",baseUrl+"//eliminartodoproducto", true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
@@ -138,8 +156,7 @@
 						formData.append("iva_compra", arraydatos[4]);
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
-						xhr.open("POST",
-								"/registrarproducto");
+						xhr.open("POST",baseUrl+"/registrarproducto");
 
 						xhr.send(formData);
 					}
@@ -165,3 +182,11 @@
 		}
 	</script>
 </html>
+
+
+
+
+
+
+
+
