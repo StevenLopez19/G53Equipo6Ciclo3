@@ -45,7 +45,7 @@
 	<div id="layoutSidenav_content">
 		<main>
 
-			<div w3-include-html="snippets/sidenav.html"></div>
+			<div w3-include-html="/snippets/sidenav.html"></div>
 
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
@@ -170,7 +170,7 @@
 			</div>
 		</main>
 
-		<div w3-include-html="snippets/footer.html"></div>
+		<div w3-include-html="/snippets/footer.html"></div>
 
 
 	</div>

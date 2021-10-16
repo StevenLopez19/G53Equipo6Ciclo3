@@ -88,7 +88,7 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 	<div id="layoutSidenav_content">
 		<main>
 
-			<div w3-include-html="snippets/sidenav.html"></div>
+			<div w3-include-html="/snippets/sidenav.html"></div>
 
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
@@ -181,7 +181,7 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 			</div>
 		</main>
 
-		<div w3-include-html="snippets/footer.html"></div>
+		<div w3-include-html="/snippets/footer.html"></div>
 
 
 	</div>
