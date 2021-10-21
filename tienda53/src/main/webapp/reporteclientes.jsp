@@ -10,7 +10,7 @@
 <meta name="description"
 	content="Proyecto de entrenamiento en desarrollo web" />
 
-<title>Lista de proveedores</title>
+<title>Reporte de clientes</title>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -23,16 +23,17 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <script>
-	
+
 var getUrl = window.location;
 var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
+	
 	window.addEventListener('DOMContentLoaded', event => {
 	    // Simple-DataTables
 	    // https://github.com/fiduswriter/Simple-DataTables/wiki
 		let table=null;
-	    if (datatablesproveedores) {
-	        table=new simpleDatatables.DataTable("#datatablesproveedores", {
+	    if (datatablesclients) {
+	        table=new simpleDatatables.DataTable("#datatablesclients", {
 	            searchable: true,
 	            labels: {
 	                placeholder: "Buscar...",
@@ -43,7 +44,7 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 	        });
 	    }
 			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("GET", baseUrl+"/listarproveedores", true);
+			xmlhttp.open("GET", baseUrl+"/listarclientes", true);
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
@@ -51,11 +52,11 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 					
 					for (i = 0; i < usuarios.length; i++) {
 						let fila = [
-							usuarios[i].nit_proveedor.toString(), 
-							usuarios[i].ciudad_proveedor, 
-							usuarios[i].direccion_proveedor, 
-							usuarios[i].nombre_proveedor, 
-							usuarios[i].telefono_proveedor
+							usuarios[i].cedula_cliente.toString(), 
+							usuarios[i].direccion_cliente, 
+							usuarios[i].email_cliente, 
+							usuarios[i].nombre_cliente, 
+							usuarios[i].telefono_cliente
 						];
 
 					    table.rows().add(fila);
@@ -66,12 +67,13 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 			xmlhttp.send();
 	});
 </script>
+
 </head>
 
 <body class="sb-nav-fixed sb-sidenav-toggled">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="index.html">TIENDA SCRUM 6 </a>
+		<a class="navbar-brand ps-3" href="index.html">TIENDA SCRUM 6</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -92,88 +94,44 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 
 			<div
 				class="container-fluid px-4 animate__animated animate__bounceInLeft">
-				<h1 class="mt-4">Lista de proveedores</h1>
+				<h1 class="mt-4">Lista de clientes</h1>
 				<ol class="breadcrumb mb-4">
-					<li class="breadcrumb-item active"> Muestra la lista de los proveedores registrados</li>
+					<li class="breadcrumb-item active">Muestra un listado de todos
+						los clientes que se encuentran registrados dentro de la plataforma</li>
 				</ol>
-				<div class="row">
-					<div class="col-xl-12 col-md-12">
-						<div class="card  text-black mb-4">
 
-							<div class="container">
-
-								<h1>
-									<i class="fas fa-cogs"></i> Operaciones
-								</h1>
-								<div class="row">
-									<div class="col-sm-2 col-md-2 me-2">
-
-										<button type="button" class="btn btn-success"
-											onclick="window.location.href='<%=request.getContextPath()%>/insertarproveedor.jsp'">
-											<i class="fas fa-plus-circle"></i> Agregar proveedor
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-2">
-										<button type="button" class="btn btn-danger"
-											onclick="window.location.href='<%=request.getContextPath()%>/eliminarproveedor.jsp'">
-											<i class="fas fa-trash"></i> Eliminar proveedor
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-4">
-										<button type="button" class="btn btn-warning"
-											onclick="window.location.href='<%=request.getContextPath()%>/actualizarproveedor.jsp'">
-											<i class="fas fa-pen-alt"></i> Actualizar proveedor
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-2">
-										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/buscarproveedor.jsp'">
-											<i class="fas fa-search"></i> Buscar proveedor
-										</button>
-									</div>
-									<div class="col-sm-2 col-md-2 me-2">
-										<button type="button" class="btn btn-primary"
-											onclick="window.location.href='<%=request.getContextPath()%>/listaproveedor.jsp'">
-											<i class="fas fa-search"></i> Listado completo
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
 				<div class="row">
 					<div class="col-xl-12">
 						<div class="card mb-4">
 							<div class="card-header text-white bg-dark">
-								<i class="fas fa-table"></i> Listado de proveedores
-							</div>
-							<div class="card-body">
-								<table id="datatablesproveedores">
-									<thead>
-										<tr>
-											<th>NIT</th>
-											<th>Ciudad</th>
-											<th>Dirección</th>
-											<th>Nombre</th>
-											<th>Telefono</th>
-										</tr>
-									</thead>
-									<tfoot>
-										<tr>
-											<th>NIT</th>
-											<th>Ciudad</th>
-											<th>Dirección</th>
-											<th>Nombre</th>
-											<th>Telefono</th>
-										</tr>
-									</tfoot>
-									<tbody id="proveedoresinfo">
+								<i class="fas fa-table"></i> Listado de clientes
+								</div>
+								<div class="card-body">
+									<table id="datatablesclients">
+										<thead>
+											<tr>
+												<th>Cedula</th>
+												<th>Dirección</th>
+												<th>Email</th>
+												<th>Nombre</th>
+												<th>Telefono</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>Cedula</th>
+												<th>Dirección</th>
+												<th>Email</th>
+												<th>Nombre</th>
+												<th>Telefono</th>
+											</tr>
+										</tfoot>
+										<tbody id="clientesinfo">
 
-									</tbody>
-								</table>
-							
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -197,7 +155,7 @@ var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split
 
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 		crossorigin="anonymous"></script>
-	
+
 </body>
 </html>
 

@@ -358,57 +358,46 @@
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 	
-			
 			var client = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/consultarcliente?cedula='
+			req.open('GET', baseUrl+'/consultarcliente?cedula_cliente='
 					+ client, false);
 			req.send(null);
 			var cliente = null;
 			if (req.status == 200)
 				cliente = JSON.parse(req.responseText);
 			console.log(cliente);
-
 			var icono = document.getElementById("checkcliente");
 			if (cliente.toString() != "") {
-
 				document.getElementById("nombre_cliente").value = cliente[0].nombre_cliente;
-
 				icono.classList.replace("text-danger", "text-success");
 				icono.classList.replace("fa-times", "fa-check");
-
 			} else {
 				document.getElementById("nombre_cliente").value = "";
 				icono.classList.replace("text-success", "text-danger");
 				icono.classList.replace("fa-check", "fa-times");
 			}
 		}
-
 		function traerNombreUsuario() {
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 	
-			
 			var user = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl'/consultarusuario?usuario='
+			req.open('GET', baseUrl+'/consultarusuario?usuario='
 					+ user, false);
 			req.send(null);
 			var usuario = null;
 			if (req.status == 200)
 				usuario = JSON.parse(req.responseText);
 			console.log(usuario);
-
 			var icono2 = document.getElementById("checkusuario");
 			if (usuario.toString() != "") {
-
 				document.getElementById("nombre_usuario").value = usuario[0].nombre_usuario;
-
 				icono2.classList.replace("text-danger", "text-success");
 				icono2.classList.replace("fa-times", "fa-check");
-
 			} else {
 				document.getElementById("nombre_usuario").value = "";
 				icono2.classList.replace("text-success", "text-danger");
@@ -416,7 +405,6 @@
 			}
 		}
 		var precio1 = 0.0;
-
 		function cargarProducto1() {
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -430,27 +418,21 @@
 			var producto1 = null;
 			if (req.status == 200)
 				producto1 = JSON.parse(req.responseText);
-
 			var icono = document.getElementById("checkitem1");
 			if (producto1.toString() != "") {
-
 				console.log(producto1);
 				document.getElementById("nombre_producto1").value = producto1[0].nombre_producto;
 				precio1 = parseFloat(producto1[0].precio_venta);
 				console.log("Precio1: " + precio1)
 				icono.classList.replace("text-danger", "text-success");
 				icono.classList.replace("fa-times", "fa-check");
-
 			} else {
 				document.getElementById("nombre_producto1").value = "";
 				icono.classList.replace("text-success", "text-danger");
 				icono.classList.replace("fa-check", "fa-times");
 			}
-
 		}
-
 		var precio2 = 0.0;
-
 		function cargarProducto2() {
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -466,23 +448,19 @@
 				producto2 = JSON.parse(req.responseText);
 			var icono = document.getElementById("checkitem2");
 			if (producto2.toString() != "") {
-
 				console.log(producto2);
 				document.getElementById("nombre_producto2").value = producto2[0].nombre_producto;
 				precio1 = parseFloat(producto2[0].precio_venta);
 				console.log("Precio2: " + precio2)
 				icono.classList.replace("text-danger", "text-success");
 				icono.classList.replace("fa-times", "fa-check");
-
 			} else {
 				document.getElementById("nombre_producto2").value = "";
 				icono.classList.replace("text-success", "text-danger");
 				icono.classList.replace("fa-check", "fa-times");
 			}
 		}
-
 		var precio3 = 0.0;
-
 		function cargarProducto3() {
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -498,21 +476,18 @@
 				producto3 = JSON.parse(req.responseText);
 			var icono = document.getElementById("checkitem3");
 			if (producto3.toString() != "") {
-
 				console.log(producto3);
 				document.getElementById("nombre_producto3").value = producto3[0].nombre_producto;
 				precio1 = parseFloat(producto3[0].precio_venta);
 				console.log("Precio3: " + precio3)
 				icono.classList.replace("text-danger", "text-success");
 				icono.classList.replace("fa-times", "fa-check");
-
 			} else {
 				document.getElementById("nombre_producto3").value = "";
 				icono.classList.replace("text-success", "text-danger");
 				icono.classList.replace("fa-check", "fa-times");
 			}
 		}
-
 		function calcularPrecio1() {
 			var cantidad = document.getElementById("cant1").value;
 			var valortotal = 0.0;
@@ -524,9 +499,7 @@
 				document.getElementById("valtotal1").value = valortotal;
 			}
 			calcularFinales();
-
 		}
-
 		function calcularPrecio2() {
 			var cantidad = document.getElementById("cant2").value;
 			var valortotal = 0.0;
@@ -538,9 +511,7 @@
 				document.getElementById("valtotal2").value = valortotal;
 			}
 			calcularFinales();
-
 		}
-
 		function calcularPrecio3() {
 			var cantidad = document.getElementById("cant3").value;
 			var valortotal = 0.0;
@@ -552,28 +523,22 @@
 				document.getElementById("valtotal3").value = valortotal;
 			}
 			calcularFinales();
-
 		}
-
 		function calcularFinales() {
 			var val1 = document.getElementById("valtotal1").value;
 			var val2 = document.getElementById("valtotal2").value;
 			var val3 = document.getElementById("valtotal3").value;
 			totalventa = parseFloat(val1) + parseFloat(val2) + parseFloat(val3);
 			document.getElementById("total_venta").value = totalventa;
-
 			var iva = totalventa * 0.19;
 			document.getElementById("total_iva").value = iva;
-
 			document.getElementById("total_venta_iva").value = iva + totalventa;
 		}
-
 		function registrar() {
 			var getUrl = window.location;
 			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 	
 			try {
-
 				formData = new FormData();
 				formData.append("codigo_venta", document
 						.getElementById("consecutivo").value);
@@ -590,9 +555,11 @@
 				var xhr = new XMLHttpRequest();
 				xhr.open("POST", baseUrl+"/registrarventa");
 				xhr.send(formData);
-
 				setTimeout(
 						function() {
+							var getUrl = window.location;
+							var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+					
 							for (i = 1; i < 4; i++) {
 								var actual = document
 										.getElementById(("valtotal" + i
@@ -636,33 +603,19 @@
 													baseUrl+"/registrardetalleventa");
 									xhr2.send(formData2);
 								}
-
 							}
 							var element = document.getElementById("error");
 							element.classList.add("visually-hidden");
 							var element2 = document.getElementById("correcto");
 							element2.classList.remove("visually-hidden");
 						}, 1500);
-
 			} catch (error) {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
 			}
-
 		}
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

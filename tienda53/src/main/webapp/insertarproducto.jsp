@@ -10,7 +10,7 @@
 <meta name="description"
 	content="Proyecto de entrenamiento en desarrollo web" />
 
-<title>Insertar Usuario</title>
+<title>Insertar Productos</title>
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -21,7 +21,52 @@
 <link href="css/styles.css" rel="stylesheet" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	
+	<script>
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
+	window.addEventListener('DOMContentLoaded', event => {
+	    // Simple-DataTables
+	    // https://github.com/fiduswriter/Simple-DataTables/wiki
+		let table=null;
+	    if (datatablesproductos) {
+	        table=new simpleDatatables.DataTable("#datatablesproductos", {
+	            searchable: true,
+	            labels: {
+	                placeholder: "Buscar...",
+	                perPage: "{select} registros por pagina",
+	                noRows: "No hay registros",
+	                info: "Mostrando {start} a {end} de {rows} registros",
+	            }
+	        });
+	    }
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", baseUrl+"/listarproductos", true);
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+
+					var productos = JSON.parse(xmlhttp.responseText);
+					
+					for (i = 0; i < productos.length; i++) {
+						let fila = [
+							productos[i].codigo_producto.toString(), 
+							productos[i].iva_compra.toString(), 
+							productos[i].nit_proveedor.toString(), 
+							productos[i].nombre_producto.toString(), 
+							productos[i].precio_compra.toString(),
+							productos[i].precio_venta.toString()
+						];
+
+					    table.rows().add(fila);
+					}
+				}
+			};
+			
+			xmlhttp.send();
+	});
+</script>
+	
 </head>
 
 <body class="sb-nav-fixed sb-sidenav-toggled">
@@ -88,7 +133,39 @@
 											</form>
 
 										</div>
+<div class="row">
+					<div class="col-xl-12">
+						<div class="card mb-4">
+							<div class="card-header text-white bg-dark">
+								<i class="fas fa-table"></i> Tabla de productos
+							</div>
+							<div class="card-body">
+								<table id="datatablesproductos">
+									<thead>
+										<tr>
+											<th>Codigo</th>
+											<th>Iva Compra</th>
+											<th>Nit Proveedor</th>
+											<th>Nombre</th>
+											<th>Precio Compra</th>
+											<th>Precio Venta</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+										<th>Codigo</th>
+											<th>Iva Compra</th>
+											<th>Nit Proveedor</th>
+											<th>Nombre</th>
+											<th>Precio Compra</th>
+											<th>Precio Venta</th>
+										</tr>
+									</tfoot>
+									<tbody id="productosinfo">
 
+									</tbody>
+								</table>
+							</div>
 
 
 									</div>
@@ -121,7 +198,7 @@
 	
 
 			try {
-
+				
 				var csvFile = document.getElementById("archivo");
 
 				var input = csvFile.files[0];
@@ -134,7 +211,7 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",baseUrl+"//eliminartodoproducto", true);
+					xhr.open("DELETE",baseUrl+"/eliminartodoproducto", true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
@@ -150,10 +227,10 @@
 
 						var formData = new FormData();
 						formData.append("codigo_producto", arraydatos[0]);
-						formData.append("nombre_producto", arraydatos[1]);
+						formData.append("iva_compra", arraydatos[1]);
 						formData.append("nit_proveedor", arraydatos[2]);
-						formData.append("precio_compra", arraydatos[3]);
-						formData.append("iva_compra", arraydatos[4]);
+						formData.append("nombre_producto", arraydatos[3]);
+						formData.append("precio_compra", arraydatos[4]);
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
 						xhr.open("POST",baseUrl+"/registrarproducto");

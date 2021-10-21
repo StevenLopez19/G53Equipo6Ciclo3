@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.grupo53</groupId>
 	<artifactId>tienda53</artifactId>
-	<version>0.0.10-SNAPSHOT</version>
+	<version>0.0.18-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>TiendaSCRUM6</name>
 	<description>Demo project for Spring Boot</description>

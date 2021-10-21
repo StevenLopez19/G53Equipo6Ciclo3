@@ -197,7 +197,7 @@
 			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarproveedor', false);
+			req.open('GET', baseUrl+'/listarproveedores', false);
 			req.send(null);
 			var proveedores = null;
 			if (req.status == 200)
